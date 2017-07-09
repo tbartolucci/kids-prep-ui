@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from "../user-service";
+import {User} from "../user";
 
 @Component({
   selector: 'app-add-subtract',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-subtract.component.css']
 })
 export class AddSubtractComponent implements OnInit {
+  title = 'Simple Adding and Subtracting';
+  user: User;
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+    this.user = this.userService.getUser();
   }
 
 }
