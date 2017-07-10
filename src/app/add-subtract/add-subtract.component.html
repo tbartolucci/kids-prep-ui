@@ -3,9 +3,9 @@
     <h1>Welcome {{user.name}}</h1>
   </div>
   <div class="panel panel-primary">
-    <div class="panel-heading">Status</div>
+    <div class="panel-heading">Solve this problem</div>
     <div class="panel-body">
-      <h3>{{title}}</h3>
+      <h3>{{currentProblem.x}} {{currentProblem.sign}} {{currentProblem.y}} =  <input [(ngModel)]="currentProblem.answer" name="answer" type="text" class="form-control"></h3>
     </div>
   </div>
 </div>
