@@ -16,8 +16,9 @@ export class AddSubtract {
   }
 
   generate(): void {
-    this.x = Math.floor(Math.random() * 20) + 1  ;
-    this.y = Math.floor(Math.random() * 20) + 1  ;
+    this.x = Math.floor(Math.random() * 10) + 1  ;
+    this.y = Math.floor(Math.random() * 10) + 1  ;
+
     this.sign = '+';
     this.realAnswer = this.calculateRealAnswer();
     this.answer = '';
