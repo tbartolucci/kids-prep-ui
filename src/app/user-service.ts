@@ -8,8 +8,8 @@ export class UserService {
   constructor() {}
 
   hasUser(): boolean{
-    if( this.user instanceof User ){
-      if( this.user.name.length > 0 ){
+    if( this.user instanceof User ) {
+      if( this.user.name.length > 0 ) {
         return true;
       }
     }
@@ -17,7 +17,7 @@ export class UserService {
     return false;
   }
 
-  setUser(user: User){
+  setUser(user: User) {
     this.user = user;
   }
 
