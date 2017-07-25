@@ -1,9 +1,13 @@
 var gulp = require('gulp');
 var fs = require('fs');
 
-var config = JSON.parse(fs.readFileSync('./awsaccess.json'));
+var config = JSON.parse(fs.readFileSync('./config.json'));
+var awsConfig = {
+  accessKeyId: config.accessKeyId,
+  secretAccessKey: config.secretAccessKey
+};
 
-var s3 = require('gulp-s3-upload')(config);
+var s3 = require('gulp-s3-upload')(awsConfig);
 var exec = require('child_process').exec;
 
 
