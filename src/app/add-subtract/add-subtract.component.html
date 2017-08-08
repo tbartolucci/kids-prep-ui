@@ -7,7 +7,7 @@
     <div class="panel-body">
       <form class="form-inline">
         <p>{{currentProblem.x}} {{currentProblem.sign}} {{currentProblem.y}} =
-        <input [(ngModel)]="currentProblem.answer" name="answer" id="answer" type="text" class="form-control">
+        <input [(ngModel)]="currentProblem.answer" #answer name="answer" id="answer" type="text" class="form-control">
         <input (click)="submitAnswer()" type="button" class="btn btn-primary" name="submitAnswer" id="submitAnswer" value="Answer">
         </p>
       </form>

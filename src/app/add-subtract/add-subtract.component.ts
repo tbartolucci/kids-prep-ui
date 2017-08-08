@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit, ViewChild } from '@angular/core';
 import {UserService} from '../user-service';
 import {User} from '../user';
 import {AddSubtract} from './add-subtract';
@@ -8,8 +8,10 @@ import {AddSubtract} from './add-subtract';
   templateUrl: './add-subtract.component.html',
   styleUrls: ['./add-subtract.component.css']
 })
-export class AddSubtractComponent implements OnInit {
-  title = 'Simple Adding and Subtracting';
+export class AddSubtractComponent implements OnInit, AfterViewInit {
+  @ViewChild('answer') answer: any;
+
+  //title = 'Simple Adding and Subtracting';
   answerText: string;
   user: User;
   @Input() currentProblem: AddSubtract;
@@ -20,6 +22,10 @@ export class AddSubtractComponent implements OnInit {
     this.user = this.userService.getUser();
     this.currentProblem = new AddSubtract();
     this.currentProblem.generate();
+  }
+
+  ngAfterViewInit() {
+    this.answer.nativeElement.focus();
   }
 
   submitAnswer(): void {
