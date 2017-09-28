@@ -1,18 +1,15 @@
-<div class="container" *ngIf="user">
-  <div class="jumbotron">
-    <h1 *ngIf="user">Welcome {{user.name}}</h1>
-  </div>
-  <div class="panel panel-primary">
-    <div class="panel-heading">Solve this problem</div>
-    <div class="panel-body">
-      <form class="form-inline">
-        <p>{{currentProblem.x}} {{currentProblem.sign}} {{currentProblem.y}} =
-        <input [(ngModel)]="currentProblem.answer" #answer name="answer" id="answer" type="text" class="form-control">
-        <input (click)="submitAnswer()" type="button" class="btn btn-primary" name="submitAnswer" id="submitAnswer" value="Answer">
-        </p>
-      </form>
-      <p *ngIf="answerText">{{answerText}}</p>
-      <p *ngIf="answerText"><input (click)="nextProblem()" class="btn btn-success" value="Next Problem"></p>
-    </div>
-  </div>
-</div>
+<h1 class="mat-h1" *ngIf="user">Welcome {{user.name}}</h1>
+<form>
+  <p class="mat-h1">{{currentProblem.x}} {{currentProblem.sign}} {{currentProblem.y}} =
+  <md-form-field>
+    <input mdInput [(ngModel)]="currentProblem.answer" #answer name="answer" id="answer" type="text">
+  </md-form-field>
+    <button md-raised-button color="primary" (click)="submitAnswer()" type="button" name="submitAnswer" id="submitAnswer">Answer</button>
+  </p>
+</form>
+<p *ngIf="answerText" class="mat-h1">
+  {{answerText}}
+</p>
+<p *ngIf="answerText">
+  <button md-raised-button color="primary" (click)="nextProblem()" class="btn btn-success" value="Next Problem">Next Problem</button>
+</p>

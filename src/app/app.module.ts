@@ -7,6 +7,8 @@ import { AddSubtractComponent } from './add-subtract/add-subtract.component';
 import {AppRoutingModule} from "./app-routing.module";
 import { LoginComponent } from './login/login.component';
 import {UserService} from "./user-service";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MdButtonModule,MatInputModule,MdCardModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,11 @@ import {UserService} from "./user-service";
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MdButtonModule,
+    MatInputModule,
+    MdCardModule
   ],
   providers: [
     UserService

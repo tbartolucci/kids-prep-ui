@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, AfterViewInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import {UserService} from '../user-service';
 import {User} from '../user';
 import {AddSubtract} from './add-subtract';
@@ -16,10 +17,13 @@ export class AddSubtractComponent implements OnInit, AfterViewInit {
   user: User;
   @Input() currentProblem: AddSubtract;
 
-  constructor(private userService: UserService) {}
+  constructor( private router: Router, private userService: UserService) {}
 
   ngOnInit() {
     this.user = this.userService.getUser();
+    if( this.user === null ) {
+      this.router.navigate(['']);
+    }
     this.currentProblem = new AddSubtract();
     this.currentProblem.generate();
   }
