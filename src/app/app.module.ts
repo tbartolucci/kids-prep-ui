@@ -8,7 +8,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import { LoginComponent } from './login/login.component';
 import {UserService} from "./user-service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MdButtonModule,MatInputModule,MdCardModule} from '@angular/material';
+import {MatButtonModule,MatInputModule,MatCardModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -21,9 +21,9 @@ import {MdButtonModule,MatInputModule,MdCardModule} from '@angular/material';
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MdButtonModule,
     MatInputModule,
-    MdCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [
     UserService
