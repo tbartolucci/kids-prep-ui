@@ -1,10 +1,14 @@
 var gulp = require('gulp');
 var fs = require('fs');
 
-var config = JSON.parse(fs.readFileSync('./config.json'));
+var awsProfiler = require('aws-profile-handler');
+
+// AWS credentials file path is optional as the last parameter. Default to ~/.aws/credentials
+var creds = awsProfiler.getProfileCredentials('personal');
+
 var awsConfig = {
-  accessKeyId: config.accessKeyId,
-  secretAccessKey: config.secretAccessKey
+  accessKeyId: creds.aws_access_key_id,
+  secretAccessKey: creds.aws_secret_access_key
 };
 
 var s3 = require('gulp-s3-upload')(awsConfig);
@@ -22,7 +26,7 @@ gulp.task('build', function (cb) {
 gulp.task("deploy", ['build'], function() {
   gulp.src("./dist/**")
     .pipe(s3({
-      Bucket: 'kids.tombartolucci.io', //  Required
+      Bucket: 'math.tombartolucci.io', //  Required
       ACL:    'public-read'       //  Needs to be user-defined
     }, {
       // S3 Constructor Options, ie:
