@@ -1,18 +1,11 @@
-<div>
-  <div>
-    <h1 class="mat-h1">Welcome</h1>
-  </div>
-    <div>
-    <form name="login">
-        <md-card>
-          <md-form-field>
-            <input mdInput  [(ngModel)]="user.name" name="name" type="text" id="inputName" placeholder="Your Name">
-          </md-form-field>
-          <div>
-            <button  (click)="login()" md-raised-button color="primary">Begin</button>
-          </div>
-        </md-card>
-    </form>
-    </div>
-</div>
+<p-card>
+  <p-header>Quiz Yourself</p-header>
+  <form name="login">
+    <input [(ngModel)]="user.name" name="name" type="text" id="inputName" placeholder="Your Name">
+    <input [(ngModel)]="user.password" name="name" type="password" id="inputPassword" placeholder="Password">
+  </form>
+  <p-footer>
+    <p-button (click)="login()" label="Login"></p-button>
+  </p-footer>
+</p-card>
 

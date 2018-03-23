@@ -24,6 +24,5 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.userService.setUser(this.user);
-    this.router.navigate(['/add-subtract']);
   }
 }
